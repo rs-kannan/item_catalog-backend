@@ -7,11 +7,11 @@ exports.getproducts = (req,res,next)=>{
     })
 }
 
-//Create Product - {{base_url}}/api/v1/product/new
-exports.newproduct = async(req,res,next)=>{
+//Create Product - http://localhost:8000/api/v1/product/new
+exports.newproducts = async(req,res,next)=>{
    const product = await Product.create(req.body);
    res.status(201).json({
     success : true,
-    product
+    product 
    })
 }

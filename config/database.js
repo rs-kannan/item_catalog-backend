@@ -11,4 +11,4 @@ const connectDatabase = ()=>{
         console.log(err)
     })
 }
-module.exports = connectDatabase;
+module.exports = connectDatabase; 
