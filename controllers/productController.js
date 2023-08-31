@@ -20,7 +20,7 @@ exports.newproducts = async(req,res,next)=>{
    })
 }
 
-//Get Single product
+//Get Single product - http://localhost:8000/api/v1/product/ID
 exports.getsingleproduct = async(req,res,next)=>{
    const products = await Product.findById(req.params.id);
    if(!products){
