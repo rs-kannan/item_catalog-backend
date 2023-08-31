@@ -12,7 +12,7 @@
                 "image": "https://tse1.mm.bing.net/th?id=OIP.Xj49oZklc1xibThv0MGvIwHaEL&pid=Api&P=0&h=180"
             }
         ],
-        "category": "Mobile Phones", 
+        "category": "Mobile phone", 
         "seller": "Amazon",
         "stock": 5,
         "numOfReviews": 15,
@@ -92,7 +92,7 @@
                 "image": "/images/products/4.jpg"
             }
         ],
-        "category": "Headphones",
+        "category": "Headphone",
         "seller": "Amazon",
         "stock": 4,
         "numOfReviews": 20,
