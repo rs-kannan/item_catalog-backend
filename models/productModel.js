@@ -11,7 +11,6 @@ const productSchema = new mongoose.Schema({
         type : Number, 
         //required : true ,
         default : 0.0
-
     },
     description :{
         type : String,
@@ -29,7 +28,7 @@ const productSchema = new mongoose.Schema({
             }
         }
     ],
-    catagory :{
+    category :{
         type : String,
         required : [true, "please enter product catagory"],
         enum : {
