@@ -85,6 +85,6 @@ const productSchema = new mongoose.Schema({
     }
 })
 
-let Schema = mongoose.model('kannan',productSchema)
+let Schema = mongoose.model('product',productSchema)
 
 module.exports = Schema
