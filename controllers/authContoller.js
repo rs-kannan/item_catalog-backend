@@ -10,8 +10,8 @@ exports.registerUser = catchAsyncError(async(req, res, next)=>{
     avatar
   });
 
-  res.status(201)({
-    success:false,
+  res.status(200).json({
+    success:true,
     user
 })
 })
