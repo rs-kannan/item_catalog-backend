@@ -5,7 +5,8 @@ const APIFeatures = require ('../utils/apiFeatures');
 
 //Get products - http://localhost:8000/api/v1/products (Get Method)
 exports.getproducts = async(req,res,next)=>{
-    const apiFeatures = new APIFeatures(Product.find(), req.query).search().filter();
+    const resPerPage = 2;
+    const apiFeatures = new APIFeatures(Product.find(), req.query).search().filter().paginate(resPerPage);
 
     const products = await apiFeatures.query;
     res.status(200).json({
@@ -48,7 +49,7 @@ exports.updateproduct = async (req,res,next)=>{
         })
        }
 
-       products = await Product.findByIdAndUpdate(req.params.id, req.body ,{
+       products = await Product.findByIdAndUpdate(req.params.id, req.body,{
           new : true,
           runValidators : true
        })
