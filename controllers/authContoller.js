@@ -10,8 +10,8 @@ exports.registerUser = catchAsyncError(async (req, res, next) => {
     email,
     password,
     avatar,
-  })
-  sendToken(user, 201, res)
+  });
+  sendToken(user, 201, res);
 });
 
 exports.loginUser = catchAsyncError(async (req, res, next) => {
@@ -26,7 +26,7 @@ exports.loginUser = catchAsyncError(async (req, res, next) => {
     return next(new Errorhandler("Invaild email & password", 400));
   }
 
-  if (!await user.isValidpassword(password)) {
+  if (!(await user.isValidpassword(password))) {
     return next(new Errorhandler("Invaild email & password", 400));
   }
 
