@@ -1,9 +1,10 @@
 const express = require ('express');
 const { getproducts,newproducts, getsingleproduct, updateproduct, deleteproduct } = require('../controllers/productController');//import get-post function 
 const router = express.Router();
+const {isAuthenticatedUser} = require('../middlewares.js/authenticate');
 
 //API URL End-Point //productController.js
-router.route('/products').get(getproducts); //Get All product Data 
+router.route('/products').get(isAuthenticatedUser, getproducts); //Get All product Data 
 router.route('/product/new').post(newproducts); //Post Product Data
 router.route('/product/:id') //chain-function - one url but handle two Put & Get
                             .get(getsingleproduct) //Get Single product Data using Id          
