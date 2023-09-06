@@ -23,11 +23,11 @@ exports.loginUser = catchAsyncError(async (req, res, next) => {
   //finding the user database
   const user = await User.findOne({ email }).select("+password");
   if (!user) {
-    return next(new Errorhandler("Invaild email & password", 400));
+    return next(new Errorhandler("Invaild email & password", 401));
   }
 
   if (!(await user.isValidpassword(password))) {
-    return next(new Errorhandler("Invaild email & password", 400));
+    return next(new Errorhandler("Invaild email & password", 401));
   }
 
   sendToken(user, 201, res);
