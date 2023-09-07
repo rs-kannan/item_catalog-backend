@@ -5,7 +5,7 @@ const {isAuthenticatedUser, authorizeRoles} = require('../middlewares.js/authent
 
 //API URL End-Point //productController.js
 router.route('/products').get(isAuthenticatedUser, getproducts); //Get All product Data 
-router.route('/product/new').post(isAuthenticatedUser, authorizeRoles('admin'),  newproducts); //Post Product Data
+router.route('/product/new').post(isAuthenticatedUser,authorizeRoles('admin'), newproducts); //Post Product Data
 router.route('/product/:id') //chain-function - one url but handle two Put & Get
                             .get(getsingleproduct) //Get Single product Data using Id          
                             .put(updateproduct) //product update by Id
