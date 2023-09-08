@@ -24,6 +24,19 @@ module.exports = (err, req, res, next) => {
       message = `Resource not found ${err.path}`;
       error = new Error(message);
     }
+    if(err.code == 11000){
+      let message = `Duplicate ${Object.keys(err.keyValue)} error`;
+      error = new Error(message);
+    }
+
+    if(err.name == 'JSONWebTokenError'){
+      let message = `JSON Web Takon is invaild. Try again`;
+      error = new Error(message)
+    }
+    if(err.name == 'TokenExpiredError'){
+      let message = `JSON Web Takon is Expired. Try again`;
+      error = new Error(message)
+    }
 
     res.status(err.statusCode).json({
       success: false,
